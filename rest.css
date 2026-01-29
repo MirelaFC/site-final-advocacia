@@ -1,0 +1,44 @@
+/* 1. O Seletor Universal: Zera tudo e define o cálculo de tamanho */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Ajustes globais para o corpo da página */
+html,
+body {
+  height: 100%;
+  /* Melhora a nitidez das fontes em alguns navegadores */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Garante que imagens não "vazem" do container e se comportem bem */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* 4. Remove as bolinhas das listas (comum em menus) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 5. Limpa o estilo padrão dos links */
+a {
+  text-decoration: none;
+  color: inherit; /* Faz o link "herdar" a cor do pai, evitando o azul padrão */
+}
+
+/* 6. Reseta bordas de botões e inputs que vêm com estilos feios */
+button,
+input {
+  border: none;
+  outline: none;
+  font-family: inherit; /* Garante que usem a mesma fonte do body */
+}
+
+button {
+  cursor: pointer; /* Coloca a "mãozinha" ao passar o mouse */
+}
