@@ -1,0 +1,381 @@
+/* 1. CONFIGURAÇÕES GERAIS*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lora", Georgia, serif;
+  background-color: #1b1b21;
+  color: #e2cc8f;
+  line-height: 1.6;
+  position: relative;
+}
+
+/* MARCA D'ÁGUA, balança maneira */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("Img/balança_de_justiça-removebg-preview.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 120%;
+  opacity: 0.04;
+  z-index: -1;
+  pointer-events: none;
+}
+
+h1,
+h2,
+h3,
+nav {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*2. HEADER E NAVEGAÇÃO*/
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: rgba(27, 27, 33, 0.95);
+  border-bottom: 2px solid #c5a25d;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.logo a {
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.logo a:hover {
+  opacity: 0.8;
+}
+
+.logo img {
+  max-width: 250px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #e2cc8f;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #c5a25d;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #fff;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* 3. SEÇÕES E CARDS */
+section {
+  /* Aumentou um pouco o menu */
+  scroll-margin-top: 100px;
+  padding: 80px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero {
+  background-color: #1b1b21;
+  position: relative;
+  z-index: 5;
+  min-height: 100vh;
+  /* Adicionei isso para garantir que o cabeçalho não empurre o conteúdo para fora */
+  box-sizing: border-box;
+}
+
+.light {
+  background-color: #45444451;
+  color: #e2e2ec92;
+}
+
+.light h2 {
+  color: #c5a25d; /* Ajustado para manter o padrão dourado */
+  margin-bottom: 15px;
+}
+
+.cards-flex {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 40px;
+}
+
+.card-transparente {
+  flex: 1;
+  /* Reduzi o min-width para 250px para caberem 4 em linha em telas grandes */
+  min-width: 250px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(197, 162, 93, 0.3);
+  border-radius: 12px;
+  padding: 30px; /* Reduzi um pouco o padding para não ficar gigante */
+  text-align: left;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Garante que o título do card tenha sempre uma altura boa */
+.card-transparente h3 {
+  color: #c5a25d;
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+  min-height: 3rem; /* Alinha os títulos mesmo que um tenha 1 linha e outro 2 */
+}
+
+/*PERFIL DA ADVOGADA */
+.card-perfil {
+  flex: 2;
+  min-width: 450px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(197, 162, 93, 0.3);
+  border-radius: 24px;
+  padding: 30px;
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.card-perfil:hover {
+  transform: translateY(-25px);
+  border-color: #c5a25d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.foto-advogada {
+  width: 160px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.foto-advogada img {
+  width: 160px;
+  height: 220px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #c5a25d;
+  display: block;
+}
+
+.texto-perfil {
+  flex: 1;
+}
+
+/*4. COMPONENTES E CONTATO*/
+.botton-action {
+  font-family: "Montserrat", sans-serif;
+  background-color: #6a2b91;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.botton-action:hover {
+  background-color: #552275;
+  transform: translateY(-2px);
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: transform 0.3s ease;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.whatsapp-float img {
+  width: 35px;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.card-contato {
+  flex: 1;
+  min-width: 280px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(197, 162, 93, 0.3);
+  border-radius: 12px;
+  padding: 30px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.card-contato:hover {
+  transform: translateY(-15px);
+  border-color: #c5a25d;
+}
+
+.icone-contato svg {
+  width: 45px;
+  height: 45px;
+  color: #c5a25d;
+  transition: transform 0.3s ease;
+}
+
+/* 5. RESPONSIVIDADE (MEDIA QUERIES)*/
+
+/* Ajuste para Tablets */
+@media (max-width: 992px) {
+  section {
+    padding: 60px 5%;
+  }
+  .card-perfil {
+    min-width: 100%;
+  }
+}
+
+/* Ajuste para Celulares */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-perfil {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .foto-advogada {
+    width: 100%;
+  }
+
+  .card-transparente,
+  .card-contato {
+    min-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+  }
+  .logo img {
+    max-width: 180px;
+  }
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    bottom: 20px;
+  }
+}
+.footer-main {
+  background-color: #121216;
+  padding: 20px 10% 20px;
+  border-top: 1px solid rgba(197, 162, 93, 0.2);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1-fr));
+  gap: 40px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+.footer-links h4,
+.footer-contato h4 {
+  color: #c5a25d;
+  margin-bottom: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #e2cc8f;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 20px;
+  font-size: 0.9rem;
+}
