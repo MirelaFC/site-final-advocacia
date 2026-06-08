@@ -1,5 +1,5 @@
 # Site Institucional - Sousa & Abreu Advocacia
-![Página inicial do site](previa_site.png)
+![Página inicial do site](Img/previa_site.png)
 
 Website institucional desenvolvido para apresentação profissional do escritório Sousa & Abreu Advocacia.
 
